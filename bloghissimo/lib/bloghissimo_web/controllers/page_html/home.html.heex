@@ -1,0 +1,61 @@
+<div class="text-center">
+  <h1 class="text-4xl font-bold text-zinc-900 mb-6">
+    Welcome to Bloghissimo
+  </h1>
+  <p class="text-xl text-zinc-600 mb-8 max-w-2xl mx-auto">
+    Your personal blogging platform. Share your thoughts, stories, and ideas with the world.
+  </p>
+  
+  <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <%= if @current_user do %>
+      <.link navigate={~p"/blogs/new"} class="bg-brand text-white px-6 py-3 rounded-lg hover:bg-brand/90 font-semibold">
+        Write Your First Post
+      </.link>
+      <.link navigate={~p"/blogs"} class="border border-brand text-brand px-6 py-3 rounded-lg hover:bg-brand/10 font-semibold">
+        Browse All Posts
+      </.link>
+    <% else %>
+      <.link navigate={~p"/register"} class="bg-brand text-white px-6 py-3 rounded-lg hover:bg-brand/90 font-semibold">
+        Get Started
+      </.link>
+      <.link navigate={~p"/blogs"} class="border border-brand text-brand px-6 py-3 rounded-lg hover:bg-brand/10 font-semibold">
+        Browse Posts
+      </.link>
+    <% end %>
+  </div>
+
+  <div class="mt-16">
+    <h2 class="text-2xl font-semibold text-zinc-900 mb-8">Features</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="text-center">
+        <div class="bg-brand/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Easy Writing</h3>
+        <p class="text-zinc-600">Create and edit blog posts with our simple, intuitive interface.</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="bg-brand/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">User Profiles</h3>
+        <p class="text-zinc-600">Manage your profile and keep track of all your blog posts.</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="bg-brand/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Secure & Private</h3>
+        <p class="text-zinc-600">Your data is secure with encrypted passwords and user authentication.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<.header>
+  Create New Blog Post
+</.header>
+
+<.simple_form :let={f} for={@changeset} as={:blog} action={~p"/blogs"} class="space-y-8">
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+
+  <.input field={f[:title]} type="text" label="Title" required />
+  <.input field={f[:image]} type="url" label="Image URL" />
+  <.input field={f[:description_short]} type="textarea" label="Short Description" rows="3" required />
+  <.input field={f[:description]} type="textarea" label="Full Description" rows="10" required />
+
+  <:actions>
+    <.button phx-disable-with="Creating..." class="w-full">
+      Create Blog Post
+    </.button>
+  </:actions>
+</.simple_form>
+
+<div class="mt-4">
+  <.link navigate={~p"/blogs"} class="text-blue-600 hover:underline">
+    ← Back to all posts
+  </.link>
+</div>
