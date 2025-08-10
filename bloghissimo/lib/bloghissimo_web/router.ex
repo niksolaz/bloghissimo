@@ -19,18 +19,18 @@ defmodule BloghissimoWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    
+
     # Authentication routes
     get "/login", AuthController, :login
     post "/login", AuthController, :create_session
     delete "/logout", AuthController, :delete_session
     get "/register", AuthController, :register
     post "/register", AuthController, :create_user
-    
+
     # User profile routes
     get "/profile", UserController, :profile
     put "/profile", UserController, :update_profile
-    
+
     # Blog routes
     get "/blogs", BlogController, :index
     get "/blogs/new", BlogController, :new

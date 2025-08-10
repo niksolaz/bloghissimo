@@ -17,14 +17,14 @@
         <.link navigate={~p"/blogs/new"} class="hover:text-zinc-700">
           New Post
         </.link>
-        <.link href={~p"/logout"} method="delete" class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80">
+        <.link href={~p"/logout"} method="delete" class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-brand hover:text-white">
           Logout
         </.link>
       <% else %>
-        <.link navigate={~p"/login"} class="hover:text-zinc-700">
+        <.link navigate={~p"/login"} class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-brand hover:text-white">
           Login
         </.link>
-        <.link navigate={~p"/register"} class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80">
+        <.link navigate={~p"/register"} class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-brand hover:text-white">
           Register
         </.link>
       <% end %>
@@ -32,7 +32,7 @@
   </div>
 </header>
 <main class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
+  <div class="mx-auto">
     <.flash_group flash={@flash} />
     {@inner_content}
   </div>
